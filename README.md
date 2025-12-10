@@ -44,6 +44,14 @@ La aplicación consume datos reales desde la API de **TheSportsDB**, mostrando p
 git clone https://github.com/PavlovRR/mimarcador-landing.git
 cd mimarcador-landing
 
+npm install
+
+ng serve
+
+Abrir en el navegador
+
+👉 http://localhost:4200
+
 
 npm install
 ng serve
