@@ -29,21 +29,8 @@ SCSS	Estilos por componente
 Flexbox / Grid	Diseño responsivo
 TheSportsDB API	Datos en tiempo real
 Fetch API	Peticiones HTTP
-📂 Estructura del proyecto
-src/
- ├─ app/
- │   ├─ core/
- │   │   └─ services/        → Servicios (API)
- │   ├─ shared/
- │   │   ├─ header/          → Encabezado
- │   │   ├─ hero/            → Sección principal
- │   │   ├─ features/        → Características
- │   │   ├─ demo/            → Vista de partidos (API)
- │   │   └─ footer/          → Pie de página
- │   ├─ app.config.ts
- │   └─ app.ts
- ├─ assets/
- └─ index.html
+
+
 
 ▶️ Cómo ejecutar el proyecto
 1. Clonar el repositorio
