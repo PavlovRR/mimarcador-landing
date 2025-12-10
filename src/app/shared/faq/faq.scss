@@ -1,0 +1,23 @@
+.section {
+  padding: 3.5rem 1rem;
+  background: #020617;
+  color: #f9fafb;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #0b1120;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}

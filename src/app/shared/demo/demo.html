@@ -1,0 +1,61 @@
+<section id="demo" class="demo-section">
+  <div class="container">
+    <h2>Próximos partidos por liga</h2>
+    <p class="section-subtitle">
+      Datos reales obtenidos desde la API de TheSportsDB usando tu API Key.
+    </p>
+
+    <!-- Botones de ligas -->
+    <div class="league-buttons">
+      <button
+        *ngFor="let league of leagues"
+        (click)="changeLeague(league.id)"
+        [class.active]="league.id === selectedLeagueId">
+        {{ league.name }}
+      </button>
+    </div>
+
+    <!-- Estados de carga / error -->
+    <p *ngIf="isLoading" class="status">Cargando partidos...</p>
+    <p *ngIf="!isLoading && errorMsg" class="status error">{{ errorMsg }}</p>
+
+    <!-- Grid de partidos -->
+    <div class="matches-grid" *ngIf="!isLoading && !errorMsg">
+  <article class="match-card" *ngFor="let m of matches">
+    <div class="teams">
+      <!-- Equipo local -->
+      <div class="team">
+        <img
+          *ngIf="m.strHomeTeamBadge"
+          [src]="m.strHomeTeamBadge"
+          [alt]="m.strHomeTeam"
+          class="team-logo"
+        />
+        <span>{{ m.strHomeTeam }}</span>
+      </div>
+
+      <!-- Centro: fecha y hora -->
+      <div class="vs">
+        <span class="date">{{ m.localDate || (m.dateEvent | date:'dd/MM') }}</span>
+        <span class="time">{{ m.localTime || m.strTime }}</span>
+      </div>
+
+      <!-- Equipo visitante -->
+      <div class="team">
+        <img
+          *ngIf="m.strAwayTeamBadge"
+          [src]="m.strAwayTeamBadge"
+          [alt]="m.strAwayTeam"
+          class="team-logo"
+        />
+        <span>{{ m.strAwayTeam }}</span>
+      </div>
+    </div>
+
+    <p class="meta">
+      {{ m.strLeague }} · {{ m.strEvent }}
+    </p>
+  </article>
+</div>
+
+
